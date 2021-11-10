@@ -1,0 +1,15 @@
+BAS_WELCOME_MESSAGE: "Training for Professionals"
+BAS_PRIMARY_COLOR: "#4f95b8" # blue
+
+# Footer links are dictionaries with a "title" and "url"
+# To remove all links, write:
+# BAS_FOOTER_NAV_LINKS: []
+# BAS_FOOTER_LEGAL_LINKS: []
+BAS_FOOTER_NAV_LINKS:
+  - title: "About"
+    url: "/about"
+  - title: "Contact"
+    url: "/contact"
+BAS_FOOTER_LEGAL_LINKS:
+    - title: "Terms of service"
+      url: "/tos"

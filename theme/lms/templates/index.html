@@ -1,0 +1,175 @@
+<%page expression_filter="h"/>
+<%inherit file="main.html" />
+<%namespace name='static' file='static_content.html'/>
+<%!
+from django.utils.translation import ugettext as _
+from django.urls import reverse
+
+from openedx.core.djangolib.markup import HTML, Text
+%>
+
+<main id="main" aria-label="Content" tabindex="-1">
+    <section class="home align-center">
+      <header>
+        <div class="outer-wrapper align-center">
+          <div class="title">
+            <div class="heading-group align-center">
+             
+               
+            </div>
+            
+           </div>
+        </div>
+
+      </header>
+      
+     
+    </section>
+    
+</main>
+
+ % if show_homepage_promo_video:
+  <section id="video-modal" class="modal home-page-video-modal video-modal">
+    <div class="inner-wrapper">
+      <iframe title="YouTube Video" width="640" height="360" src="//www.youtube.com/embed/${homepage_promo_video_youtube_id}?showinfo=0" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </section>
+% endif
+
+<%block name="js_extra">
+   <script type="text/javascript">
+      $(window).load(function() {
+         if(getParameterByName('next')) {
+              $('#login').trigger("click");
+         }
+      })
+   </script>
+</%block>
+
+% if show_signup_immediately is not UNDEFINED:
+  ## NOTE: This won't work in production, because anonymous views are cached, so it will
+  ## show either with or without this extra js for 3 minutes at a time.
+<script type="text/javascript">
+  $(window).load(function() {$('#signup_action').trigger("click");});
+</script>
+
+
+% endif
+
+<!--Show courses -->
+
+<!--Create Carousel-->
+ <section>
+
+   <div class="container align-center">
+       <!-- <h1 style="color: black; text-align: center;"> Welcome to Safer Sleep for Babies</h1>
+        <h4 style="color: gray; text-align: center;">Providing professional training for Scotland </h4>
+      <br>
+      <br> -->
+      <h2 style="color:black; text-align: center;">Safer Sleep for Babies</h2>
+        <!-- <span style="color: red;""><b>Normal Infant Sleep | SIDS and Sleep Safety | Supporting Parents with Infant Sleep</b></span> -->
+      <div class= "col-10 offset-1" style="text-align: center;"><p>Although sudden infant death syndrome (SIDS) is now very rare, over 200 babies still die in the UK every year. Yet we now have accurate information about how and where babies die and research that tells us how to prevent them dying. </p>
+        The Scottish Government and NHS Scotland have come together with the following organisations: Parent Club, The Lullaby Trust, Baby Sleep Info Source (Basis) and UNICEF Baby Friendly Initiative to improve messages and take new action to tackle this. Your role is crucial - by talking to families, and supporting them with understanding how to avoid the specific risks for their baby, we can help to reduce the number of babies dying. This training, and the supporting range of new leaflets, have been designed to provide you with the knowledge and understanding to enable you to discuss safer sleep with all families and care givers, regardless of their circumstances.
+       </div>
+    </div>
+      
+      
+         <!-- <div class="row">
+          <title> Brought to you by:</title>
+            <div class="col-3">
+      
+          <div class="card">
+            <h3 class="card-title">Lullaby Trust</h3>
+              <img src="${static.url('images/trust.png')}" class="card-img-top" alt="Normal Infant Sleep">
+              <div class="card-body">
+                
+                <p class="card-text">Every year over 500 babies die suddenly and unexpectedly and over half of those deaths remain unexplained. We don’t know what causes sudden infant death syndrome (SIDS) but what we do know is that there are simple steps parents can take to reduce the risk of it happening.</p>
+              </div>
+            
+              <div class="card-body">
+                <a href="https://www.lullabytrust.org.uk/" class="btn btn-info btn-lg">About us</a>
+              
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card">
+              <h3 class="card-title">Baby Sleep Info Source</h3>
+              <img src="${static.url('images/basis.png')}" class="card-img-top" alt="Sids and Sleep Safety">
+              <div class="card-body">
+                
+                <p class="card-text">We discuss how infant sleep may vary due to cultural behaviours and expectations such as what babies are fed, where they sleep, and how we interpret their needs. This information is for;
+
+                  a) parents who wish to make informed choices about infant sleep and night-time care
+                  b) health practitioners who wish to share evidence-based information with parents about infant sleep.</p>
+              </div>
+            
+              <div class="card-body">
+               <a href="https://www.basisonline.org.uk/" class="btn btn-info btn-lg">About us</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card" >
+              <h3 class="card-title">NHSScotland
+              </h3>
+              <img src="${static.url('images/NHS_Logo_ds.jpg')}" class="card-img-top" alt="supporting parents">
+              <div class="card-body">
+                
+                <p class="card-text">NHSScotland is committed to working closely with partners in local authorities and the third sector. This is crucial to achieving our ambitions for a healthier Scotland and to meeting the challenges of the years ahead. The Quality Strategy provides a basis for NHSScotland to work with partners, through Community Planning Partnerships, to secure progress towards our three Quality Ambitions, and the outcomes agreed locally and nationally through the Single Outcome Agreements and the National Performance Framework.
+
+
+                  </p>
+              </div>
+            
+              <div class="card-body">
+                <a href="https://www.scot.nhs.uk/" class="btn btn-info btn-lg">About us</a>
+              </div>
+            </div>
+            </div>
+            <div class="col-3">
+              <div class="card" >
+                <h3 class="card-title">The Scottish Government
+                </h3>
+                <img src="${static.url('images/scot_gov.jpg')}" class="card-img-top" alt="supporting parents">
+                <div class="card-body">
+                  
+                  <p class="card-text">The Scottish Government is the devolved government for Scotland and has a range of responsibilities that include: the economy, education, health, justice, rural affairs, housing, environment, equal opportunities, consumer advocacy and advice, transport and taxation.
+                      </p>
+                </div>
+              
+                <div class="card-body">
+                  <a href="https://www.gov.scot/" class="btn btn-info btn-lg">About us</a>
+                </div>
+              </div>
+              </div>
+          </div> -->
+         
+    
+
+</section>
+<!-- Courses section to highlight the safer sleep for babies cours-->
+
+
+<!-- <%include file="${courses_list}" />    -->
+ <!-- Slider -->
+ <!-- <section>
+// <div class="container">
+// <div id="min_slider">
+//   <figure>
+//     <img src="/static/gran-openedx-theme/images/fjell.jpg">
+//     <img src="/static/gran-openedx-theme/images/fjaere.jpg">
+//     <img src="/static/gran-openedx-theme/images/sol.jpg">
+//     <img src="/static/gran-openedx-theme/images/sol_hav.jpg">
+//     <img src="/static/gran-openedx-theme/images/hauknes.jpg">
+   
+//   </figure>
+// </div>
+// </div>
+// </section> -->
+
+
+
+
+ <!-- Other Custom sections can be here-->
+

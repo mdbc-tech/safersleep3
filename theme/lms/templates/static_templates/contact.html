@@ -1,0 +1,57 @@
+<%page expression_filter="h"/>
+<%! from django.utils.translation import ugettext as _ %>
+<%inherit file="../main.html" />
+
+<%block name="pagetitle">${_("Contact")}</%block>
+
+<main id="main" aria-label="Content" tabindex="-1">
+    <section class="container about">
+        <h1>
+            <%block name="pageheader">${page_header or _("Contact")}</%block>
+        </h1>
+        
+            <%block name="pagecontent">
+		<div class="row">
+            <div class="col-6">
+			<h2>Basis</h2>
+            <p> for basis contact the<a href="https://www.durham.ac.uk/research/institutes-and-centres/durham-infancy-sleep-centre/"> Durham Infancy and Sleep Centre</a></p>
+            <p> <i class="fa fa-phone"> 0191 334 0260</i></p>
+            <p> <i class="fa fa-envelope"></i><a href="mailto:infancy.sleep.centre@durham.ac.uk">The Infancy Sleep Centre</a></p>
+
+			<hr>
+            
+            <div class="content clearfix">
+											
+                <p>The Lullaby Trust<br />
+                    CAN Mezzanine<br />
+                    7-14 Great Dover Street<br />
+                    London SE1 4YR</p>
+                <p>Telephone (general enquiries):<i class="fa fa-phone"></i> 0207 802 3200<br />
+                    <i class="fa fa-envelope"></i> <a href="mailto:office@lullabytrust.org.uk">office@lullabytrust.org.uk</a>
+                </p>
+                <p>Bereavement Support:<i class="fa fa-phone"></i> 0808 802 6868<br />
+                    <i class="fa fa-envelope"></i> <a href="mailto:support@lullabytrust.org.uk">support@lullabytrust.org.uk</a>
+                </p>
+                <p>Information Line:<i class="fa fa-phone"></i> 0808 802 6869<br />
+                    <i class="fa fa-envelope"></i> <a href="mailto:info@lullabytrust.org.uk">info@lullabytrust.org.uk</a>
+                </p>
+                <p>Press office: <i class="fa fa-phone"></i> 07860 178 605 (this number is diverted out of hours)<br />
+                    <i class="fa fa-envelope"></i> <a href="mailto:communications@lullabytrust.org.uk">communications@lullabytrust.org.uk</a>
+                </p>
+                <p>We welcome all feedback about our Bereavement Support and Information and Advice services</p>
+
+        </div>
+    </div>
+		
+        <div class="col-6">		
+		<p>For any question regarding the usage of {{ PLATFORM_NAME }}, please get in touch with <a href="mailto:{{ CONTACT_EMAIL }}">{{ CONTACT_EMAIL }}</a>.</%block>
+        </p>
+        <p><h4> For technical support please request by filling in the form below  </h4>
+            <iframe title="Request technical support" src="https://admin.safersleepforbabies.org.uk/help/createissueform-safersleep.php" width="800" height="1200" marginwidth="0" marginheight="0" frameborder="0" scrolling="yes">
+                Your browser does not support IFrames.
+                </iframe>
+        </p>
+        </div>
+    </div>
+    </section>
+</main>
