@@ -12,11 +12,11 @@ This theme is a combinations of  https://github.com/overhangio/indigo  and https
 
  Clone this repository:
 
-`$ git clone https://github.com/murat-polat/gran-openedx-theme`
+`$ git clone https://github.com/mdbc-tech/safersleep3`
 
  Render (paver/update) theme:
 
-`$ tutor config render  ./gran-openedx-theme/theme "$(tutor config printroot)/env/build/openedx/themes/gran-openedx-theme" `
+`$ tutor config render --extra-config ./safersleep3/config.yml  ./safersleep3/theme "$(tutor config printroot)/env/build/openedx/themes/sleep3" `
 
 Rebuild the Open edX docker image:: ( For tutor production modus )
 
